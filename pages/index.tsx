@@ -116,7 +116,11 @@ const HeroSection: React.FC = () => {
           >
             <FallInPlace delay={0.8}>
               <ButtonGroup spacing={4} pt="4" alignItems="center">
-                <ButtonLink colorScheme="primary" size="lg" href="/signup">
+                <ButtonLink
+                  colorScheme="primary"
+                  size="lg"
+                  href="https://demo.cogniz.co/auth/signup"
+                >
                   Sign Up
                 </ButtonLink>
                 <ButtonLink
@@ -154,13 +158,13 @@ const HeroSection: React.FC = () => {
               <Box
                 overflow="hidden"
                 height="100%"
-                className="rounded-lg shadow-md p-0"
+                className="rounded-lg flex items-center justify-center shadow-md !p-0"
               >
                 <Image
                   src="/static/screenshots/hero.png"
                   layout="fixed"
-                  width={1200}
-                  height={630}
+                  width={1320}
+                  height={500}
                   alt="Screenshot of a Cogniz Chat page"
                   quality="75"
                   priority
@@ -341,7 +345,7 @@ const FeaturesSection = () => {
         <>
           Cogniz includes everything you need to build.
           <Br />
-          Use it as working buddy or foundation for your design system.
+          Use it as working buddy or foundation for your system.
         </>
       }
       align="left"
