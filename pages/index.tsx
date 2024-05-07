@@ -1,59 +1,69 @@
-import * as React from "react";
-import type { NextPage } from "next";
-import Image from "next/legacy/image";
 import {
-  Container,
   Box,
-  Stack,
-  HStack,
-  ButtonGroup,
   Button,
-  Icon,
-  Heading,
-  Text,
-  Wrap,
-  Tag,
-  useClipboard,
-  IconButton,
-  VStack,
+  ButtonGroup,
+  Container,
   Flex,
+  HStack,
+  Heading,
+  Icon,
+  IconButton,
+  Stack,
+  Tag,
+  Text,
+  VStack,
+  Wrap,
+  useClipboard,
 } from "@chakra-ui/react";
 import { SEO } from "components/seo/seo";
+import type { NextPage } from "next";
+import Image from "next/legacy/image";
+import * as React from "react";
 
-import { FallInPlace } from "components/motion/fall-in-place";
+import { Br, Link } from "@saas-ui/react";
+import { Faq } from "components/faq";
+import { Features } from "components/features";
+import { BackgroundGradient } from "components/gradients/background-gradient";
 import { Hero } from "components/hero";
-import { Link, Br } from "@saas-ui/react";
+import { ChakraLogo, NextjsLogo } from "components/logos";
+import { FallInPlace } from "components/motion/fall-in-place";
+import { Pricing } from "components/pricing/pricing";
 import { Em } from "components/typography";
-import { NextjsLogo, ChakraLogo } from "components/logos";
+import { AiOutlineProject } from "react-icons/ai";
+import { BsGraphUpArrow } from "react-icons/bs";
+import { FaNetworkWired } from "react-icons/fa";
 import {
   FiArrowRight,
+  FiAward,
+  FiBarChart,
   FiBox,
   FiCheck,
   FiCode,
   FiCopy,
+  FiDatabase,
   FiFlag,
   FiGrid,
   FiLock,
   FiSearch,
-  FiSliders,
-  FiSmile,
   FiTerminal,
   FiThumbsUp,
   FiToggleLeft,
   FiTrendingUp,
+  FiUserCheck,
   FiUserPlus,
+  FiUsers,
 } from "react-icons/fi";
-import { Features } from "components/features";
-import { BackgroundGradient } from "components/gradients/background-gradient";
-import { Faq } from "components/faq";
-import { Pricing } from "components/pricing/pricing";
+import { GoWorkflow } from "react-icons/go";
+import { IoBusinessOutline } from "react-icons/io5";
+import { PiToolbox } from "react-icons/pi";
+import { TbBuildingStadium, TbSettingsAutomation } from "react-icons/tb";
 
 import { ButtonLink } from "components/button-link/button-link";
 import { Testimonial, Testimonials } from "components/testimonials";
 
 import faq from "data/faq";
-import testimonials from "data/testimonials";
 import pricing from "data/pricing";
+import testimonials from "data/testimonials";
 
 import {
   Highlights,
@@ -64,10 +74,7 @@ import {
 const Home: NextPage = () => {
   return (
     <Box>
-      <SEO
-        title="Saas UI Landingspage"
-        description="Free SaaS landingspage starter kit"
-      />
+      <SEO title="Cogniz" description="Your Intelligent Retrieval Assistant" />
       <Box>
         <HeroSection />
 
@@ -77,7 +84,7 @@ const Home: NextPage = () => {
 
         <TestimonialsSection />
 
-        <PricingSection />
+        {/* <PricingSection /> */}
 
         <FaqSection />
       </Box>
@@ -97,30 +104,24 @@ const HeroSection: React.FC = () => {
             px="0"
             title={
               <FallInPlace>
-                Build beautiful
-                <Br /> software faster
+                Your Intelligent <Br /> Retrieval Assistant
               </FallInPlace>
             }
             description={
               <FallInPlace delay={0.4} fontWeight="medium">
-                Saas UI is a <Em>React component library</Em>
-                <Br /> that doesn&apos;t get in your way and helps you <Br />{" "}
-                build intuitive SaaS products with speed.
+                Cogniz, a revolutionary <Em>Retrieval-Augmented Generation</Em>{" "}
+                (RAG) application designed to transform the way you work
               </FallInPlace>
             }
           >
             <FallInPlace delay={0.8}>
-              <HStack pt="4" pb="12" spacing="8">
-                <NextjsLogo height="28px" /> <ChakraLogo height="20px" />
-              </HStack>
-
-              <ButtonGroup spacing={4} alignItems="center">
+              <ButtonGroup spacing={4} pt="4" alignItems="center">
                 <ButtonLink colorScheme="primary" size="lg" href="/signup">
                   Sign Up
                 </ButtonLink>
                 <ButtonLink
                   size="lg"
-                  href="https://demo.saas-ui.dev"
+                  href="https://demo.cogniz.co"
                   variant="outline"
                   rightIcon={
                     <Icon
@@ -150,13 +151,17 @@ const HeroSection: React.FC = () => {
             margin="0 auto"
           >
             <FallInPlace delay={1}>
-              <Box overflow="hidden" height="100%">
+              <Box
+                overflow="hidden"
+                height="100%"
+                className="rounded-lg shadow-md p-0"
+              >
                 <Image
-                  src="/static/screenshots/list.png"
+                  src="/static/screenshots/hero.png"
                   layout="fixed"
                   width={1200}
-                  height={762}
-                  alt="Screenshot of a ListPage in Saas UI Pro"
+                  height={630}
+                  alt="Screenshot of a Cogniz Chat page"
                   quality="75"
                   priority
                 />
@@ -174,33 +179,33 @@ const HeroSection: React.FC = () => {
         pt="20"
         features={[
           {
-            title: "Accessible",
-            icon: FiSmile,
-            description: "All components strictly follow WAI-ARIA standards.",
+            title: "Data Mastery",
+            icon: FiDatabase,
+            description:
+              "Dive into your company's data ecosystem for tailored insights.",
             iconPosition: "left",
             delay: 0.6,
           },
           {
-            title: "Themable",
-            icon: FiSliders,
+            title: "Simple Decision-Making",
+            icon: FiAward,
             description:
-              "Fully customize all components to your brand with theme support and style props.",
+              "Get clear summaries and actionable insights effortlessly.",
             iconPosition: "left",
             delay: 0.8,
           },
           {
-            title: "Composable",
-            icon: FiGrid,
+            title: "Streamlined Workflows",
+            icon: GoWorkflow,
             description:
-              "Compose components to fit your needs and mix them together to create new ones.",
+              "Automate tasks for increased effiency and productivity.",
             iconPosition: "left",
             delay: 1,
           },
           {
-            title: "Productive",
-            icon: FiThumbsUp,
-            description:
-              "Designed to reduce boilerplate and fully typed, build your product at speed.",
+            title: "Personalized Customer Service",
+            icon: FiUserCheck,
+            description: "Craft accurate responses, boosting satisfaction.",
             iconPosition: "left",
             delay: 1.1,
           },
@@ -216,16 +221,15 @@ const HighlightsSection = () => {
 
   return (
     <Highlights>
-      <HighlightsItem colSpan={[1, null, 2]} title="Core components">
+      <HighlightsItem colSpan={[1, null, 2]} title="Core Features">
         <VStack alignItems="flex-start" spacing="8">
           <Text color="muted" fontSize="xl">
-            Get started for free with <Em>30+ open source components</Em>.
-            Including authentication screens with Clerk, Supabase and Magic.
-            Fully functional forms with React Hook Form. Data tables with React
-            Table.
+            Cogniz goes beyond traditional AI assistants, empowering business
+            users across all departments to make smarter decisions, save time,
+            and achieve exceptional results.
           </Text>
 
-          <Flex
+          {/* <Flex
             rounded="full"
             borderWidth="1px"
             flexDirection="row"
@@ -253,14 +257,14 @@ const HighlightsSection = () => {
               isRound
               color="white"
             />
-          </Flex>
+          </Flex> */}
         </VStack>
       </HighlightsItem>
       <HighlightsItem title="Solid foundations">
         <Text color="muted" fontSize="lg">
-          We don&apos;t like to re-invent the wheel, neither should you. We
-          selected the most productive and established tools in the scene and
-          build Saas UI on top of it.
+          This revolutionary application, utilizing Retrieval-Augmented
+          Generation (RAG) technology, reshapes workflows, enabling smarter
+          decisions, automated tasks, and superior results
         </Text>
       </HighlightsItem>
       <HighlightsTestimonialItem
@@ -269,37 +273,38 @@ const HighlightsSection = () => {
         avatar="/static/images/avatar.jpg"
         gradient={["pink.200", "purple.500"]}
       >
-        “Saas UI helped us set up a beautiful modern UI in no time. It saved us
-        hundreds of hours in development time and allowed us to focus on
-        business logic for our specific use-case from the start.”
+        “ With Cogniz, we've been able to streamline our processes, save
+        valuable time, and enhance productivity across all departments, from
+        sales to human resources. Its unique ability to harness internal data
+        ecosystems and provide tailored insights has revolutionized the way we
+        operate. ”
       </HighlightsTestimonialItem>
-      <HighlightsItem
-        colSpan={[1, null, 2]}
-        title="Start your next idea two steps ahead"
-      >
+      <HighlightsItem colSpan={[1, null, 2]} title="All in one assistant">
         <Text color="muted" fontSize="lg">
-          We took care of all your basic frontend needs, so you can start
-          building functionality that makes your product unique.
+          From sales to human resources, Cogniz enhances efficiency and
+          productivity, becoming an indispensable asset for thriving in today's
+          competitive landscape.
         </Text>
         <Wrap mt="8">
           {[
-            "authentication",
-            "navigation",
-            "crud",
-            "settings",
-            "multi-tenancy",
-            "layouts",
-            "billing",
-            "a11y testing",
-            "server-side rendering",
-            "documentation",
-            "onboarding",
-            "storybooks",
-            "theming",
-            "upselling",
-            "unit testing",
-            "feature flags",
-            "responsiveness",
+            "Retrieval-Augmented Generation",
+            "RAG",
+            "revolutionary",
+            "workflows",
+            "departments",
+            "data-driven decisions",
+            "automation",
+            "efficiency",
+            "productivity",
+            "tailored insights",
+            "customer service",
+            "sales",
+            "marketing",
+            "finance",
+            "human resources",
+            "competitive landscape",
+            "business success",
+            "demo",
           ].map((value) => (
             <Tag
               key={value}
@@ -329,15 +334,14 @@ const FeaturesSection = () => {
           as="p"
         >
           Not your standard
-          <Br /> dashboard template.
+          <Br /> AI Assistant.
         </Heading>
       }
       description={
         <>
-          Saas UI Pro includes everything you need to build modern frontends.
+          Cogniz includes everything you need to build.
           <Br />
-          Use it as a template for your next product or foundation for your
-          design system.
+          Use it as working buddy or foundation for your design system.
         </>
       }
       align="left"
@@ -345,71 +349,66 @@ const FeaturesSection = () => {
       iconSize={4}
       features={[
         {
-          title: "Components.",
-          icon: FiBox,
+          title: "Workflows.",
+          icon: GoWorkflow,
           description:
-            "All premium components are available on a private NPM registery, no more copy pasting and always up-to-date.",
+            "Cogniz streamlines your organization's workflows, empowering your team to work more effectively and achieve greater results.",
           variant: "inline",
         },
         {
-          title: "Starterkits.",
-          icon: FiLock,
+          title: "Automation.",
+          icon: TbSettingsAutomation,
           description:
-            "Example apps in Next.JS, Electron. Including authentication, billing, example pages, everything you need to get started FAST.",
+            "Cogniz automates repetitive tasks and processes, freeing up your team to focus on more strategic initiatives and high-value activities.",
           variant: "inline",
         },
         {
-          title: "Documentation.",
-          icon: FiSearch,
+          title: "Efficiency.",
+          icon: AiOutlineProject,
           description:
-            "Extensively documented, including storybooks, best practices, use-cases and examples.",
+            "Our platform enhances efficiency across your organization, helping you accomplish more in less time and with fewer resources.",
           variant: "inline",
         },
         {
-          title: "Onboarding.",
-          icon: FiUserPlus,
+          title: "Productivity.",
+          icon: FaNetworkWired,
           description:
-            "Add user onboarding flows, like tours, hints and inline documentation without breaking a sweat.",
+            "Cogniz boosts productivity by enabling your team to work smarter, not harder, and achieve better results in less time.",
           variant: "inline",
         },
         {
-          title: "Feature flags.",
-          icon: FiFlag,
+          title: "Customer service.",
+          icon: FiUsers,
           description:
-            "Implement feature toggles for your billing plans with easy to use hooks. Connect Flagsmith, or other remote config services once you're ready.",
+            "With Cogniz, you can deliver exceptional customer service by providing personalized, accurate responses to customer inquiries and requests.",
           variant: "inline",
         },
         {
-          title: "Upselling.",
-          icon: FiTrendingUp,
+          title: "Competitive landscape.",
+          icon: IoBusinessOutline,
           description:
-            "Components and hooks for upgrade flows designed to make upgrading inside your app frictionless.",
+            "In today's competitive business environment, Cogniz gives you the edge you need to stay ahead of the competition and thrive.",
           variant: "inline",
         },
         {
-          title: "Themes.",
-          icon: FiToggleLeft,
+          title: "Business success.",
+          icon: BsGraphUpArrow,
           description:
-            "Includes multiple themes with darkmode support, always have the perfect starting point for your next project.",
+            "Cogniz is the key to unlocking your organization's full potential and achieving greater success in today's fast-paced business world.",
           variant: "inline",
         },
         {
-          title: "Generators.",
-          icon: FiTerminal,
+          title: "Departments.",
+          icon: TbBuildingStadium,
           description:
-            "Extend your design system while maintaininig code quality and consistency with built-in generators.",
+            "From sales to human resources, every department in your organization can benefit from Cogniz's powerful features and tailored solutions.",
           variant: "inline",
         },
         {
-          title: "Monorepo.",
-          icon: FiCode,
-          description: (
-            <>
-              All code is available as packages in a high-performance{" "}
-              <Link href="https://turborepo.com">Turborepo</Link>, you have full
-              control to modify and adjust it to your workflow.
-            </>
-          ),
+          title: "Revolutionary.",
+          icon: PiToolbox,
+          description:
+            "Our platform represents a new era in business solutions, providing innovative tools and features that set us apart from the competition.",
           variant: "inline",
         },
       ]}
@@ -464,16 +463,16 @@ const FaqSection = () => {
 
 export default Home;
 
-export async function getStaticProps() {
-  return {
-    props: {
-      announcement: {
-        title: "Support us by becoming a stargazer! 🚀 ",
-        description:
-          '<img src="https://img.shields.io/github/stars/saas-js/saas-ui.svg?style=social&label=Star" />',
-        href: "https://github.com/saas-js/saas-ui",
-        action: false,
-      },
-    },
-  };
-}
+// export async function getStaticProps() {
+//   return {
+//     props: {
+//       announcement: {
+//         title: "Support us by becoming a stargazer! 🚀 ",
+//         description:
+//           '<img src="https://img.shields.io/github/stars/saas-js/saas-ui.svg?style=social&label=Star" />',
+//         href: "https://github.com/saas-js/saas-ui",
+//         action: false,
+//       },
+//     },
+//   };
+// }

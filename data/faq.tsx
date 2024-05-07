@@ -1,32 +1,47 @@
-import * as React from 'react'
+import { Em } from "components/typography";
+import Link from "next/link";
+import * as React from "react";
 
 const faq = {
-  title: 'Frequently asked questions',
+  title: "Frequently asked questions",
   // description: '',
   items: [
     {
-      q: 'How many products can I use Saas UI Pro for?',
+      q: "How Cogniz works?",
       a: (
         <>
-          The single license can be used for one commercial application or SaaS
-          product and unlimited internal tools. You can buy as many licenses as
-          you need. <br /> The unlimited license does not have any restrictions.
+          Cogniz works by harnessing the power of internal data ecosystems
+          within your organization, including reports, emails, and customer
+          interactions. It retrieves relevant data, performs in-depth analysis,
+          and presents users with clear summaries and actionable insights to
+          make informed decisions.
         </>
       ),
     },
     {
-      q: 'Can I use Saas UI Pro for client work?',
-      a: "Yes, that's totally up to you, as long as it fits the license you purchase.",
+      q: "How can I schedule a demo of Cogniz?",
+      a: (
+        <>
+          You can schedule a demo of Cogniz by contacting our team at{" "}
+          <Link
+            href="mailto:vip@cogniz.co."
+            target="_blank"
+            className="hover:underline"
+          >
+            <Em>vip@cogniz.co</Em>
+          </Link>
+        </>
+      ),
     },
     {
-      q: 'Can I use Saas UI Pro for Open Source projects?',
-      a: 'No currently not. A large part of Saas UI is already released under MIT license. We try to give back to the community as much as possible.',
+      q: "Which departments can benefit from using Cogniz?",
+      a: "Cogniz is designed to benefit departments across the organization, including sales, marketing, finance, and human resources.",
     },
     {
-      q: 'Does Saas UI include Figma, Sketch or other design files?',
-      a: 'No, Saas UI does not include any design assets. Maintaining design resources costs a lot of extra effort. We believe small teams can move much faster by designing directly in code, with help of Storybooks.',
+      q: "Is Cogniz suitable for businesses of all sizes?",
+      a: "Yes, Cogniz is suitable for businesses of all sizes, from startups to large enterprises. Its scalable solutions can be customized to fit the needs and budget of any organization, helping them unlock new levels of efficiency and productivity.",
     },
   ],
-}
+};
 
-export default faq
+export default faq;
