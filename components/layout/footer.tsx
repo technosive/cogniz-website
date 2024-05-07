@@ -7,6 +7,7 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 import { Link, LinkProps } from "@saas-ui/react";
@@ -69,6 +70,7 @@ export const Copyright: React.FC<CopyrightProps> = ({
 
 export const FooterLink: React.FC<LinkProps> = (props) => {
   const { children, ...rest } = props;
+  const color = useColorModeValue("#231f20", "#fff");
   return (
     <Link
       color="muted"
@@ -76,7 +78,7 @@ export const FooterLink: React.FC<LinkProps> = (props) => {
       textDecoration="none"
       target="_blank"
       _hover={{
-        color: "white",
+        color: color,
         transition: "color .2s ease-in",
       }}
       {...rest}

@@ -65,6 +65,7 @@ import faq from "data/faq";
 import pricing from "data/pricing";
 import testimonials from "data/testimonials";
 
+import CookieBanner from "components/cookie-banner";
 import {
   Highlights,
   HighlightsItem,
@@ -87,6 +88,8 @@ const Home: NextPage = () => {
         {/* <PricingSection /> */}
 
         <FaqSection />
+
+        <CookieBanner />
       </Box>
     </Box>
   );
