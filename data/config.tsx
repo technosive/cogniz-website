@@ -1,5 +1,6 @@
 import { Button } from "@chakra-ui/react";
 import { Link } from "@saas-ui/react";
+import { BASE_URL } from "constants/Contant";
 import { NextSeoProps } from "next-seo";
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import { FiAward, FiBarChart, FiDatabase, FiUserCheck } from "react-icons/fi";
@@ -8,8 +9,18 @@ import { Logo } from "./logo";
 const siteConfig = {
   logo: Logo,
   seo: {
-    title: "COGNIZ",
+    title: "COGNIZ | Your Intelligent Retrieval Assistant",
     description: "Your Intelligent Retrieval Assistant",
+    openGraph: {
+      url: BASE_URL,
+      images: [
+        {
+          url: `${BASE_URL}/static/opengraph/Base.jpg`,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
   } as NextSeoProps,
   termsUrl: "#",
   privacyUrl: "#",

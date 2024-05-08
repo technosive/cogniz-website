@@ -75,18 +75,16 @@ import {
 const Home: NextPage = () => {
   return (
     <Box>
-      <SEO title="Cogniz" description="Your Intelligent Retrieval Assistant" />
+      <SEO
+        title="Cogniz | Your Intelligent Retrieval Assistant"
+        description="Your Intelligent Retrieval Assistant"
+      />
       <Box>
         <HeroSection />
-
         <HighlightsSection />
-
         <FeaturesSection />
-
         <TestimonialsSection />
-
         {/* <PricingSection /> */}
-
         <FaqSection />
 
         <CookieBanner />
