@@ -71,10 +71,17 @@ import {
   HighlightsItem,
   HighlightsTestimonialItem,
 } from "components/highlights";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   return (
     <Box>
+      <Head>
+        <meta
+          name="keywords"
+          content="cogniz, ai, machine learning, chatbot, assistant, saas,retrieval augmentation, generative app, text generation, large language models (LLMs), published LLMs, local LLMs, creative writing, content creation, AI Chatbots, Natural Language Processing (NLP), Artificial Intelligence (AI), Chatbot Solutions, Conversational AI, Knowledge Management, Customer Support Automation, Personalized Responses, Real-Time Information Retrieval, Advanced Language Models, Intelligent Virtual Assistants, Enhanced Customer Experience, Business Intelligence Solutions, Innovation in Customer Service, Data-Driven Decision Making, Accelerated Product Development, Innovative AI Technology, Contextual Understanding, Optimized Knowledge Sharing, Cutting-Edge Technology Solutions"
+        />
+      </Head>
       <SEO
         title="Cogniz | Your Intelligent Retrieval Assistant"
         description="Your Intelligent Retrieval Assistant"
