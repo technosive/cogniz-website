@@ -85,6 +85,7 @@ const Home: NextPage = () => {
       <SEO
         title="Cogniz | Your Intelligent Retrieval Assistant"
         description="Your Intelligent Retrieval Assistant"
+        canonical="https://cogniz.co"
       />
       <Box>
         <HeroSection />

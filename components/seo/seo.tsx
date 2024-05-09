@@ -4,7 +4,7 @@ import React from "react";
 
 export interface SEOProps extends NextSeoProps {}
 
-export const SEO = ({ title, description, ...props }: SEOProps) => (
+export const SEO = ({ title, description, canonical, ...props }: SEOProps) => (
   <NextSeo
     title={title}
     description={description}
@@ -19,6 +19,7 @@ export const SEO = ({ title, description, ...props }: SEOProps) => (
     twitter={siteConfig.seo.twitter}
     noindex={false}
     nofollow={false}
+    canonical={canonical}
     {...props}
   />
 );
