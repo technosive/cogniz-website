@@ -56,6 +56,7 @@ export const HighlightsTestimonialItem: React.FC<
     ...rest
   } = props;
   const theme = useTheme();
+  const color = useColorModeValue("#231f20", "#fff");
   return (
     <HighlightsItem
       justifyContent="center"
@@ -78,7 +79,7 @@ export const HighlightsTestimonialItem: React.FC<
       <Testimonial
         name={name}
         description={
-          <Box as="span" color="whiteAlpha.700">
+          <Box as="span" color={color}>
             {description}
           </Box>
         }
@@ -86,7 +87,7 @@ export const HighlightsTestimonialItem: React.FC<
         border="0"
         bg="transparent"
         boxShadow="none"
-        color="white"
+        color={color}
         position="relative"
       >
         {children}

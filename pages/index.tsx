@@ -283,14 +283,14 @@ const HighlightsSection = () => {
       <HighlightsTestimonialItem
         name="Renata Alink"
         description="Founder"
-        avatar="/static/images/avatar.jpg"
+        avatar=""
+        // avatar="/static/images/avatar.jpg"
         gradient={["pink.200", "purple.500"]}
       >
-        “ With Cogniz, we've been able to streamline our processes, save
-        valuable time, and enhance productivity across all departments, from
-        sales to human resources. Its unique ability to harness internal data
-        ecosystems and provide tailored insights has revolutionized the way we
-        operate. ”
+        “With Cogniz, we've been able to streamline our processes, save valuable
+        time, and enhance productivity across all departments, from sales to
+        human resources. Its unique ability to harness internal data ecosystems
+        and provide tailored insights has revolutionized the way we operate.”
       </HighlightsTestimonialItem>
       <HighlightsItem colSpan={[1, null, 2]} title="All in one assistant">
         <Text color="muted" fontSize="lg">

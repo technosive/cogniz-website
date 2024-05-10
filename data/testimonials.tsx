@@ -3,9 +3,8 @@ export default {
   items: [
     {
       name: "Eelco Wiersma",
-      description: "Founder Saas UI",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1470742164024008706/k-eXHtu0_normal.jpg",
+      description: "Software Developer",
+      avatar: "",
       children: (
         <>
           “Cogniz has been a game-changer for our organization. Its advanced
@@ -16,8 +15,8 @@ export default {
     },
     {
       name: "Caroline Yahaya",
-      description: "Fullstack Developer",
-      avatar: "/static/images/avatar2.jpg",
+      description: "Digital Marketing Manager",
+      avatar: "",
       children: (
         <>
           “Thanks to Cogniz, our marketing team has been able to analyze
@@ -28,8 +27,8 @@ export default {
     },
     {
       name: "Alberto Vazquez",
-      description: "Frontend Engineer",
-      avatar: "/static/images/avatar3.jpg",
+      description: "Product Manager",
+      avatar: "",
       children: (
         <>
           “With Cogniz, our sales team has been able to generate custom
