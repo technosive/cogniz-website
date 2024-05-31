@@ -65,6 +65,7 @@ import faq from "data/faq";
 import pricing from "data/pricing";
 import testimonials from "data/testimonials";
 
+import ContactForm from "components/contact/contact";
 import CookieBanner from "components/cookie-banner";
 import {
   Highlights,
@@ -94,6 +95,7 @@ const Home: NextPage = () => {
         <TestimonialsSection />
         {/* <PricingSection /> */}
         <FaqSection />
+        <ContactSection />
 
         <CookieBanner />
       </Box>
@@ -472,6 +474,10 @@ const PricingSection = () => {
 
 const FaqSection = () => {
   return <Faq {...faq} />;
+};
+
+const ContactSection = () => {
+  return <ContactForm title="Contact Us" />;
 };
 
 export default Home;

@@ -22,7 +22,7 @@ const CookieBanner = () => {
 
   return !show ? (
     <section
-      className={`fixed max-w-md p-4 mx-auto bg-white border border-gray-200 dark:bg-gray-800 right-4 bottom-4 lg:right-12 lg:bottom-16 dark:border-gray-700 rounded-2xl`}
+      className={`fixed max-w-md p-4 mx-auto bg-white border border-gray-200 dark:bg-gray-800 right-4 bottom-4 lg:right-12 lg:bottom-16 dark:border-gray-700 rounded-2xl z-[99]`}
     >
       <h2 className="font-semibold text-gray-800 dark:text-white">
         🍪 Cookie Notice
@@ -35,7 +35,7 @@ const CookieBanner = () => {
           className="text-blue-500 hover:underline"
           target="_blank"
         >
-          Read cookies policies
+          Read cookie policy
         </Link>
         .{" "}
       </p>
