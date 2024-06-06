@@ -21,6 +21,13 @@ const siteConfig = {
         },
       ],
     },
+    twitter: {
+      site: "@Cogniz",
+      handle: "@Cogniz",
+      cardType: "summary_large_image",
+      description: "Your Intelligent  Retrieval Assistant",
+      image: `${BASE_URL}/static/opengraph/Base.jpg`,
+    },
   } as NextSeoProps,
   termsUrl: "#",
   privacyUrl: "#",
@@ -86,7 +93,8 @@ const siteConfig = {
       {
         title: "Streamlined Workflows",
         icon: FiBarChart,
-        description: "Automate tasks for increased effiency and productivity.",
+        description:
+          "Automate tasks for increased efficiency and productivity.",
       },
       {
         title: "Personalized Customer Service",
